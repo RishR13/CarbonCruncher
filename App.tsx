@@ -1,20 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
 
-export default function App() {
+import {Slider} from '@miblanchard/react-native-slider';
+import { Image, StyleSheet } from 'react-native';
+import Swiper from 'react-native-swiper';
+import CustomSlider from './CustomSlider';
+
+
+import { View } from 'react-native';
+import SliderCarousel from './SliderCarousel';
+
+const App: React.FC = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={{ flex: 1 }}>
+      <SliderCarousel />
     </View>
   );
-}
-
+};
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
   },
-});
+  image: {
+    width: 2, // Adjust the width
+    height: 2, // Adjust the height
+  }
+})
+
+export default App;
